@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <title>Devend Prasad</title>
+
+    <meta
+      name="description"
+      content="Freebie 62 - Resume Alternate (Tailwind CSS). Check out more at https://pixelcave.com"
+    />
+    <meta name="author" content="pixelcave" />
+
+    <!-- Icons -->
+    <link
+      rel="icon"
+      href="https://cdn.pixelcave.com/favicon.svg"
+      sizes="any"
+      type="image/svg+xml"
+    />
+    <link
+      rel="icon"
+      href="https://cdn.pixelcave.com/favicon.png"
+      type="image/png"
+    />
+
+    <!-- Inter web font from bunny.net (GDPR compliant) -->
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS Play CDN (mainly for development/testing purposes) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+
+    <!-- Tailwind CSS v3 Configuration -->
+    <script>
+      const defaultTheme = tailwind.defaultTheme;
+      const colors = tailwind.colors;
+      const plugin = tailwind.plugin;
+
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", ...defaultTheme.fontFamily.sans],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Alpine.js -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <!-- Alpine.js (x-cloak - https://alpinejs.dev/directives/cloak) -->
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+       html {
+    scroll-behavior: smooth;
+  }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+<nav class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-800">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+    <div class="text-xl font-bold text-purple-700 dark:text-purple-400">
+      <a href="#main">
+      Devendra</a>
+    </div>
+    <div class="space-x-9 text-sm font-medium">
+      <a href="#Education" class="text-purple-600 dark:hover:text-purple-400">Education</a>
+      <a href="#Certifications" class="text-purple-600 dark:hover:text-purple-400">Certifications</a>
+      <a href="#Experience" class="text-purple-600 dark:hover:text-purple-400">Experience</a>
+      <a href="#Social" class="text-purple-600 dark:hover:text-purple-400">Social</a>
+      <a href="#contact" class="text-purple-600 dark:hover:text-purple-400">Contact</a>
+    </div>
+  </div>
+</nav>
+
+    <!-- Page Container -->
+    <div
+      x-data="{
+        darkMode: true,
+        toggleDarkMode() {
+          this.darkMode = ! this.darkMode;
+
+          // Toggle dark class on html element
+          if (this.darkMode) {
+            document.body.parentNode.classList.add('dark');
+          } else {
+            document.body.parentNode.classList.remove('dark');
+          }
+        }
+      }"
+      class="min-h-dvh min-w-[320px] bg-white text-gray-800 dark:bg-gray-950 dark:text-gray-100"
+    >
+      <!-- Toggle Dark Mode -->
+      <div
+        class="fixed right-0 top-0 z-50 flex size-12 items-center justify-center"
+      >
+        <button
+          x-on:click="toggleDarkMode()"
+          type="button"
+          class="inline-block size-9 text-gray-600 hover:opacity-75 dark:text-gray-400"
+        >
+          <svg
+            x-show="!darkMode"
+            x-cloak
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="inline-block size-6"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="m17.66 17.66 1.41 1.41" />
+            <path d="M2 12h2" />
+            <path d="M20 12h2" />
+            <path d="m6.34 17.66-1.41 1.41" />
+            <path d="m19.07 4.93-1.41 1.41" />
+          </svg>
+          <svg
+            x-show="darkMode"
+            x-cloak
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="inline-block size-6"
+          >
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          </svg>
+        </button>
+      </div>
+      <!-- END Toggle Dark Mode -->
+
+      <div class="container mx-auto max-w-7xl">
+        <div class="grid grid-cols-1 md:grid-cols-12">
+          <!-- Info -->
+          <div id="main"
+            class="bg-gray-100 p-5 text-left dark:bg-gray-900 md:col-span-4 lg:p-14"
+          >
+            <h1
+              class="leading-tighter mt-5 text-4xl font-extrabold lg:text-6xl"
+            >
+              Devendra <br />
+              Prasad
+            </h1>
+            <h2 class="mt-3 text-xl text-purple-600 dark:text-purple-500">
+              Teacher
+            </h2>
+            <div class="-mx-5 mt-10 lg:-mx-16">
+              <img
+  src="devend img.jpg"
+  class="w-50 h-80 inline-block rounded-sm lg:rounded-sm"
+  alt="Mr. Devendra Prasad"
+/>
+
+            </div>
+            <p
+              class="mt-10 text-balance leading-relaxed text-gray-700 dark:text-gray-300"
+            >
+              "I am Devendra Prasad, an experienced educator with 5+ years of teaching Social Science and English in both Hindi and English mediums. I hold a B.Ed. and am pursuing an M.A. in Political Science from IGNOU. I specialize in lesson planning, classroom management, and creating engaging, disciplined learning environments."
+            </p>
+            <div class="mt-10 space-y-5">
+              <div class="flex items-center gap-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="inline-block size-6 flex-none text-purple-600 dark:text-purple-500"
+                >
+                  <path d="M18 8c0 4.5-6 9-6 9s-6-4.5-6-9a6 6 0 0 1 12 0" />
+                  <circle cx="12" cy="8" r="2" />
+                  <path
+                    d="M8.835 14H5a1 1 0 0 0-.9.7l-2 6c-.1.1-.1.2-.1.3 0 .6.4 1 1 1h18c.6 0 1-.4 1-1 0-.1 0-.2-.1-.3l-2-6a1 1 0 0 0-.9-.7h-3.835"
+                  />
+                </svg>
+                <span class="truncate font-medium">Siwan, Bihar</span>
+              </div>
+              <div class="flex items-center gap-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="inline-block size-6 flex-none text-purple-600 dark:text-purple-500"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+                <span class="truncate font-medium">+91-7301422992</span>
+              </div>
+              <div class="flex items-center gap-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="inline-block size-6 flex-none text-purple-600 dark:text-purple-500"
+                >
+                  <path
+                    d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8"
+                  />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  <path d="M19 16v6" />
+                  <path d="M16 19h6" />
+                </svg>
+                <a
+                  href="javascript:void(0)"
+                  class="truncate font-medium text-black underline hover:text-black/75 dark:text-white dark:hover:text-white/75"
+                >
+                  devendprasad6@gmail.com
+                </a>
+              </div>
+              <div class="flex items-center gap-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="inline-block size-6 flex-none text-purple-600 dark:text-purple-500"
+                >
+                  <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54" />
+                  <path
+                    d="M7 3.34V5a3 3 0 0 0 3 3v0a2 2 0 0 1 2 2v0c0 1.1.9 2 2 2v0a2 2 0 0 0 2-2v0c0-1.1.9-2 2-2h3.17"
+                  />
+                  <path
+                    d="M11 21.95V18a2 2 0 0 0-2-2v0a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"
+                  />
+                  <circle cx="12" cy="12" r="10" />
+                </svg>
+                <a
+                  class="truncate font-medium text-black underline hover:text-black/75 dark:text-white dark:hover:text-white/75"
+                  href="javascript:void(0)"
+                >
+                www.devend-educator.com
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- END Info -->
+
+          <!-- Bio -->
+          <div class="mx-auto max-w-2xl space-y-16 p-5 md:col-span-8 md:p-10">
+            <!-- Education -->
+            <div>
+              <div id="Education"
+                class="mb-8 border-b-4 border-gray-100 py-2.5 dark:border-gray-900"
+              >
+                <h3 class="text-xl font-medium">Education</h3>
+              </div>
+              <ul
+                class="relative space-y-6 pl-6 before:absolute before:bottom-0 before:left-0 before:top-0 before:block before:w-1 before:rounded-full before:bg-purple-50 before:content-[''] dark:before:bg-purple-950"
+              >
+                <li
+                  class="before:border-1 relative before:absolute before:-left-[1.875rem] before:top-6 before:block before:size-4 before:rounded-full before:border-2 before:border-purple-200/75 before:bg-white before:content-[''] dark:before:border-purple-800/75 dark:before:bg-gray-950"
+                >
+                  <h4
+                    class="text-sm font-semibold text-purple-600 dark:text-purple-500"
+                  >
+                    March 2014 - March 2015
+                  </h4>
+                  <h5 class="mb-2 font-bold">
+                    Matriculation,
+                  </h5>
+                  <p class="text-sm/relaxed text-gray-700 dark:text-gray-300">
+                    I have done My Matriculation From CBSE RAIPUR, UtTRAKHAND
+                  </p>
+                </li>
+                <li
+                  class="before:border-1 relative before:absolute before:-left-[1.875rem] before:top-6 before:block before:size-4 before:rounded-full before:border-2 before:border-purple-200/75 before:bg-white before:content-[''] dark:before:border-purple-800/75 dark:before:bg-gray-950"
+                >
+                  <h4
+                    class="text-sm font-semibold text-purple-600 dark:text-purple-500"
+                  >
+                    April 2015 - April 2018
+                  </h4>
+                  <h5 class="mb-2 font-bold">
+                    Intermidiate - Arts
+                  </h5>
+                  <p class="text-sm/relaxed text-gray-700 dark:text-gray-300">
+                    I have completed my Intermediate education under the CBSE Raipur, UtTRAKHAND, with a focus on Political Science, History, and Civics as my core subjects.
+                  </p>
+                </li>
+                <li
+                  class="before:border-1 relative before:absolute before:-left-[1.875rem] before:top-6 before:block before:size-4 before:rounded-full before:border-2 before:border-purple-200/75 before:bg-white before:content-[''] dark:before:border-purple-800/75 dark:before:bg-gray-950"
+                >
+                  <h4
+                    class="text-sm font-semibold text-purple-600 dark:text-purple-500"
+                  >
+                    Jun 2023 - Jul 2023
+                  </h4>
+                  <h5 class="mb-2 font-bold">
+                    Bachelor's Of Arts
+                  </h5>
+                  <p class="text-sm/relaxed text-gray-700 dark:text-gray-300">
+                    My journey continued with a Bachelor of Arts, where I deepened my understanding of humanities and social sciences, building a strong academic foundation and enhancing my critical thinking and communication skills to support my teaching career.
+                  </p>
+                </li>
+                <li>
+                    <h4
+                    class="text-sm font-semibold text-purple-600 dark:text-purple-500"
+                  >
+                    July 2023 - June  2025
+                  </h4>
+                  <h5 class="mb-2 font-bold">
+                     Bachelor of Education (B.Ed.)
+                  </h5>
+                  <p class="text-sm/relaxed text-gray-700 dark:text-gray-300">
+                   My journey continued with a Bachelor of Education (B.Ed.), where I gained professional training in teaching methodologies, classroom management, and student psychology, equipping me with the skills to create an effective and inclusive learning environment.
+                  </p>
+                </li>
+                <li
+                  class="before:border-1 relative before:absolute before:-left-[1.875rem] before:top-6 before:block before:size-4 before:rounded-full before:border-2 before:border-purple-200/75 before:bg-white before:content-[''] dark:before:border-purple-800/75 dark:before:bg-gray-950"
+                >
+ <li
+                  class="before:border-1 relative before:absolute before:-left-[1.875rem] before:top-6 before:block before:size-4 before:rounded-full before:border-2 before:border-purple-200/75 before:bg-white before:content-[''] dark:before:border-purple-800/75 dark:before:bg-gray-950"
+                >
+                  <h4
+                    class="text-sm font-semibold text-purple-600 dark:text-purple-500"
+                  >
+                    Jul 2025 - Present
+                  </h4>
+                  <h5 class="mb-2 font-bold">
+                    Master of Arts
+                  </h5>
+                  <p class="text-sm/relaxed text-gray-700 dark:text-gray-300">
+                    My journey continued with a Bachelor of Arts, where I deepened my understanding of humanities and social sciences, building a strong academic foundation and enhancing my critical thinking and communication skills to support my teaching career.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <!-- END Education -->
+
+            <!-- Work Experience -->
+            <div>
+              <div id="Experience"
+                class="mb-8 border-b-4 border-gray-100 py-2.5 dark:border-gray-900"
+              >
+                <h3 class="text-xl font-medium">Teaching Experience</h3>
+              </div>
+              <ul
+                class="relative space-y-6 pl-6 before:absolute before:bottom-0 before:left-0 before:top-0 before:block before:w-1 before:rounded-full before:bg-purple-50 before:content-[''] dark:before:bg-purple-950"
+              >
+                <li
+                  class="before:border-1 relative before:absolute before:-left-[1.875rem] before:top-6 before:block before:size-4 before:rounded-full before:border-2 before:border-purple-200/75 before:bg-white before:content-[''] dark:before:border-purple-800/75 dark:before:bg-gray-950"
+                >
+                  <h4
+                    class="text-sm font-semibold text-purple-600 dark:text-purple-500"
+                  >
+Duration: 2021 – 2024
+                  </h4>
+                  <h5 class="mb-2 font-bold">
+                    ❖ SD Public School, Jigna
+                  </h5>
+                  <p class="text-sm/relaxed text-gray-700 dark:text-gray-300">
+                 - Taught students from Class 6 to 8 in the subjects of Social Science (SST), Science and English. <br>
+                 -Specialized in Social Science, with consistently excellent student performance in the subject
+                  </p>
+                </li>
+                <li
+                  class="before:border-1 relative before:absolute before:-left-[1.875rem] before:top-6 before:block before:size-4 before:rounded-full before:border-2 before:border-purple-200/75 before:bg-white before:content-[''] dark:before:border-purple-800/75 dark:before:bg-gray-950"
+                >
+                  <h4
+                    class="text-sm font-semibold text-purple-600 dark:text-purple-500"
+                  >
+                    2024 - Currently Working
+                  </h4>
+                  <h5 class="mb-2 font-bold">❖ Saara International School Manichhapar, Hathua</h5>
+                  <p class="text-sm/relaxed text-gray-700 dark:text-gray-300">
+                    Teaching Classes 9 and 10 with a specialization in History and Civics, demonstrating strong
+subject expertise and delivering excellent academic results
+                  </p>
+                </li>
+                
+              </ul>
+            </div>
+            <!-- END Work Experience -->
+
+            
+<div>
+  <div id="Certifications"
+    class="mb-8 border-b-4 border-gray-100 py-2.5 dark:border-gray-900"
+  >
+    <h3 class="text-xl font-medium">Certifications & Training</h3>
+  </div>
+  <ul
+    class="relative space-y-6 pl-6 before:absolute before:bottom-0 before:left-0 before:top-0 before:block before:w-1 before:rounded-full before:bg-purple-50 before:content-[''] dark:before:bg-purple-950"
+  >
+    <li
+      class="before:border-1 relative before:absolute before:-left-[1.875rem] before:top-6 before:block before:size-4 before:rounded-full before:border-2 before:border-purple-200/75 before:bg-white before:content-[''] dark:before:border-purple-800/75 dark:before:bg-gray-950"
+    >
+      <h4
+        class="text-sm font-semibold text-purple-600 dark:text-purple-500"
+      >
+        Computer Literacy
+      </h4>
+      <h5 class="mb-2 font-bold">
+        Diploma in Computer Science (DCS) – View Tech Com. Institute
+      </h5>
+      <p class="text-sm/relaxed text-gray-700 dark:text-gray-300">
+        Completed a one-year diploma focused on foundational computer skills, MS Office tools, and digital classroom utilities. Developed strong proficiency in Word, Excel, PowerPoint, and internet basics—supporting tech-enabled teaching methods.
+      </p>
+    </li>
+    
+    <li
+      class="before:border-1 relative before:absolute before:-left-[1.875rem] before:top-6 before:block before:size-4 before:rounded-full before:border-2 before:border-purple-200/75 before:bg-white before:content-[''] dark:before:border-purple-800/75 dark:before:bg-gray-950"
+    >
+      <h4
+        class="text-sm font-semibold text-purple-600 dark:text-purple-500"
+      >
+        Communication & Public Speaking
+      </h4>
+      <h5 class="mb-2 font-bold">
+        Public Speaking in English – 1 Year Course
+      </h5>
+      <p class="text-sm/relaxed text-gray-700 dark:text-gray-300">
+        Strengthened confidence and fluency in English communication. Trained in effective speech delivery, voice modulation, and presentation techniques—essential for teaching and leading school events.
+      </p>
+    </li>
+
+    <li
+      class="before:border-1 relative before:absolute before:-left-[1.875rem] before:top-6 before:block before:size-4 before:rounded-full before:border-2 before:border-purple-200/75 before:bg-white before:content-[''] dark:before:border-purple-800/75 dark:before:bg-gray-950"
+    >
+      <h4
+        class="text-sm font-semibold text-purple-600 dark:text-purple-500"
+      >
+        Safety Training
+      </h4>
+      <h5 class="mb-2 font-bold">
+        Basic First Aid Training – Red Cross Society (45 Days)
+      </h5>
+      <p class="text-sm/relaxed text-gray-700 dark:text-gray-300">
+        Completed certified first aid training to ensure student safety and emergency preparedness within the school environment. Covered CPR, wound care, and basic life-saving techniques.
+      </p>
+    </li>
+  </ul>
+</div>
+
+            <!-- Social -->
+            <div>
+              <div id="Social"
+                class="mb-8 border-b-4 border-gray-100 py-2.5 dark:border-gray-900"
+              >
+                <h3 class="text-xl font-medium">Social</h3>
+              </div>
+              <ul
+                class="relative space-y-6 pl-6 before:absolute before:bottom-0 before:left-0 before:top-0 before:block before:w-1 before:rounded-full before:bg-purple-50 before:content-[''] dark:before:bg-purple-950"
+              >
+                <li
+                  class="before:border-1 relative before:absolute before:-left-[1.875rem] before:top-6 before:block before:size-4 before:rounded-full before:border-2 before:border-purple-200/75 before:bg-white before:content-[''] dark:before:border-purple-800/75 dark:before:bg-gray-950"
+                >
+                  <h4
+                    class="text-sm font-semibold text-purple-600 dark:text-purple-500"
+                  >
+                    LinkedIn
+                  </h4>
+                  <h5 class="mb-2 font-bold">Work Profile</h5>
+                  <p>
+                    <a
+                      href="javascript:void(0)"
+                      class="text-sm font-medium text-gray-600 underline hover:text-gray-600/75 dark:text-gray-400 dark:hover:text-gray-400/75"
+                    >
+                      https://linkedin.com
+                    </a>
+                  </p>
+                </li>
+                <li
+                  class="before:border-1 relative before:absolute before:-left-[1.875rem] before:top-6 before:block before:size-4 before:rounded-full before:border-2 before:border-purple-200/75 before:bg-white before:content-[''] dark:before:border-purple-800/75 dark:before:bg-gray-950"
+                >
+                  <h4
+                    class="text-sm font-semibold text-purple-600 dark:text-purple-500"
+                  >
+                    X
+                  </h4>
+                  <h5 class="mb-2 font-bold">Work Profile</h5>
+                  <p>
+                    <a
+                      href="javascript:void(0)"
+                      class="text-sm font-medium text-gray-600 underline hover:text-gray-600/75 dark:text-gray-400 dark:hover:text-gray-400/75"
+                    >
+                      https://x.com
+                    </a>
+                  </p>
+                </li>
+                <li
+                  class="before:border-1 relative before:absolute before:-left-[1.875rem] before:top-6 before:block before:size-4 before:rounded-full before:border-2 before:border-purple-200/75 before:bg-white before:content-[''] dark:before:border-purple-800/75 dark:before:bg-gray-950"
+                >
+                  <h4
+                    class="text-sm font-semibold text-purple-600 dark:text-purple-500"
+                  >
+                    Instagram
+                  </h4>
+                  <h5 class="mb-2 font-bold">Personal Profile</h5>
+                  <p>
+                    <a
+                      class="text-sm font-medium text-gray-600 underline hover:text-gray-600/75 dark:text-gray-400 dark:hover:text-gray-400/75"
+                      href="https://www.instagram.com/dev.s_1999/" target="_blank"
+                    >
+                      https://www.instagram.com/dev.s_1999/
+                    </a>
+                  </p>
+                </li>
+              </ul>
+<!-- Contact Section Starts -->
+<section id="contact" style="padding: 2rem;">
+  <div style="max-width: 600px; margin: auto;">
+    <h2 style="text-align: center; font-family: cursive; font-size: 2rem; margin-bottom: 1rem;">Get in Touch With Me</h2>
+    
+    <form action="https://formsubmit.co/getabhishek46@gmail.com"
+method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
+      <input type="text" name="name" placeholder="Your Name" required
+        style="padding: 0.75rem; border: 1px solid #17cd26; border-radius: 5px;" />
+
+      <input type="tel" name="phone" placeholder="Phone Number" required
+        style="padding: 0.75rem; border: 1px solid #283ed0; border-radius: 5px;" />
+
+      <textarea name="message" placeholder="Your Message" rows="5" required
+        style="padding: 0.75rem; border: 1px solid #0e1ceaf0; border-radius: 5px;"></textarea>
+
+      <button type="submit"
+        style="padding: 0.75rem; background-color: #7a75e2; color: white; border: none; border-radius: 5px; font-weight: bold;">
+        Send 
+      </button>
+    </form>
+  </div>
+</section>
+<!-- Contact Section Ends -->
+              <!-- Footer -->
+              <footer
+                class="mt-20 space-y-2 py-8 text-sm text-gray-600 dark:text-gray-400"
+              >
+                <p class="font-semibold">
+                  Devend &copy;
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                </p>
+                <p class="inline-flex items-center gap-1">
+                  <span>Crafted with</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    data-slot="icon"
+                    class="hi-mini hi-heart inline-block size-5 text-rose-500"
+                  >
+                    <path
+                      d="m9.653 16.915-.005-.003-.019-.01a20.759 20.759 0 0 1-1.162-.682 22.045 22.045 0 0 1-2.582-1.9C4.045 12.733 2 10.352 2 7.5a4.5 4.5 0 0 1 8-2.828A4.5 4.5 0 0 1 18 7.5c0 2.852-2.044 5.233-3.885 6.82a22.049 22.049 0 0 1-3.744 2.582l-.019.01-.005.003h-.002a.739.739 0 0 1-.69.001l-.002-.001Z"
+                    />
+                  </svg>
+                  <span
+                    >by
+                    <a
+                      href="https://www.linkedin.com/in/abhishek-kumar-04b707302/"" target="_blank"
+                      class="font-medium text-black underline hover:text-black/75 dark:text-white dark:hover:text-white/75"
+                    >
+                      The Marcos
+                    </a></span
+                  >
+                </p>
+              </footer>
+              <!-- END Footer -->
+            </div>
+            <!-- END Social -->
+          </div>
+          <!-- END Bio -->
+        </div>
+      </div>
+    </div>
+    <!-- END Page Container -->
+     
+  </body>
+</html>
